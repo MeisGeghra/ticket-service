@@ -24,7 +24,7 @@ public class TicketController {
         try {
             return Long.toHexString(ticketRepository.newTicket());
         } catch (InterruptedException e) {
-            return "false";
+            throw new HttpStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "");
         }
     }
 
